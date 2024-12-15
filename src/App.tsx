@@ -4,13 +4,15 @@ import { Resumen } from "./components";
 import { PracticaCustomHook } from "./components";
 import CreacionProyecto from "./components/Resumen/CreacionProyecto/CreacionProyecto";
 import { UseState } from "./components";
-import UseEffect from "./components/Resumen/UseEffect/UseEffect";
+import {UseEffect} from "./components";
+import {CustomHook} from "./components";
 
 function App() {
   const [summary, setSummary] = useState(false);
   const [projectreact, setProjectreact] = useState(false);
   const [hookUseState, setHookUseState] = useState(false);
   const [hookUseEffect, setHookUseEffect] = useState(false);
+  const [customHook, setCustomHook] = useState(false);
 
   return (
     <>
@@ -38,6 +40,12 @@ function App() {
         </button>
         {hookUseEffect ? <UseEffect /> : null}
       </div>
+
+      <div>
+        <button onClick={() => setCustomHook(!customHook)}>Custom hook: useFetch</button>
+      </div>
+      {customHook ? <CustomHook /> : null}
+      
     </>
   );
 }
