@@ -42,32 +42,33 @@ export const UseState = () => {
       <p>Ejemplo:</p>
       <pre>
         <code>
-        {`import { useEffect, useState } from 'react'
-          import './App.css'
-          import { Button } from './components'
+        {`
+  import { useEffect, useState } from 'react'
+  import './App.css'
+  import { Button } from './components'
 
-          function App() {
-            const [count, setCount] = useState(0)
-            const [name, setName] = useState('Luisa')
+  function App() {
+    const [count, setCount] = useState(0)
+    const [name, setName] = useState('Luisa')
 
-            const countMore = () => {
-              setCount((count) => count + 1)
-            }
+    const countMore = () => {
+      setCount((count) => count + 1)
+    }
 
-            const changeName = () => {
-              setName('La Peter')
-            }
+    const changeName = () => {
+      setName('La Peter')
+    }
 
-            return (
-              <>
-                <Button label={'Count is ${"count"}'} parentMethod={countMore} />
-                <p>{name}</p>
-                <Button label="Change name" parentMethod={changeName} />
-              </>
-            )
-          }
+    return (
+      <>
+        <Button label={'Count is ${"count"}'} parentMethod={countMore} />
+        <p>{name}</p>
+        <Button label="Change name" parentMethod={changeName} />
+      </>
+    )
+    }
 
-          export default App`}
+  export default App`}
         </code>
       </pre>
       <PracticaUseState />

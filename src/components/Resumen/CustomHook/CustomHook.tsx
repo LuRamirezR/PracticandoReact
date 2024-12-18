@@ -11,53 +11,53 @@ export const CustomHook = () => {
       <pre>
         <code>
             {`
-            import { useEffect, useState } from "react";
+  import { useEffect, useState } from "react";
 
-            type Data<T> = T | null;
-            type ErrorType = Error | null;
+  type Data<T> = T | null;
+  type ErrorType = Error | null;
 
-            interface Params<T> {
-                data: T | null;
-                loading: boolean;
-                error: ErrorType;
-            }
+  interface Params<T> {
+    data: T | null;
+    loading: boolean;
+    error: ErrorType;
+  }
 
-            export const useFetch = <T>(url:string): Params<T> => {
-                const [data, setData] = useState<Data<T>>(null);
-                const [loading, setLoading] = useState(true);
-                const [error, setError] = useState<ErrorType>(null)
+  export const useFetch = <T>(url:string): Params<T> => {
+    const [data, setData] = useState<Data<T>>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<ErrorType>(null)
 
-                useEffect(() => {
-                    const controller = new AbortController();
-                    setLoading(true);
+  useEffect(() => {
+    const controller = new AbortController();
+    setLoading(true);
 
-                    const fetchData = async () => {
-                        try {
-                            const response = await fetch(url, controller);
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url, controller);
 
-                            if (!response.ok) {
-                                throw new Error("Error en la petición");
-                            }
+        if (!response.ok) {
+          throw new Error("Error en la petición");
+        }
 
-                            const jsonData: T = await response.json();
-                            setData(jsonData);
-                            setError(null);
-                        } catch (err) {
-                            setError(err as Error);
-                        } finally {
-                            setLoading(false);
-                        }
-                    }
-                    fetchData();
+        const jsonData: T = await response.json();
+        setData(jsonData);
+        setError(null);
+      } catch (err) {
+          setError(err as Error);
+      } finally {
+          setLoading(false);
+      }
+    }
+      fetchData();
 
-                    return () => {
-                        controller.abort();
-                    }
+    return () => {
+      controller.abort();
+    }
                     
-                }, [url])
+    }, [url])
 
-                return { data, loading, error };
-            }
+      return { data, loading, error };
+    }
             `}
         </code>
       </pre>
@@ -68,34 +68,34 @@ export const CustomHook = () => {
       <pre>
         <code>
           {`
-                import './App.css'
-                import { useFetch } from './hooks';
+  import './App.css'
+  import { useFetch } from './hooks';
 
-                const url = "https://api.example.com/data";
+  const url = "https://api.example.com/data";
 
-                interface Data {
-                name: string;
-                lastName: string;
-                age: number;
-                }
+  interface Data {
+    name: string;
+    lastName: string;
+    age: number;
+  }
 
-                function App() {
-                const { data, error, loading} =useFetch<Data>(url);
+  function App() {
+    const { data, error, loading} =useFetch<Data>(url);
 
-                if(loading){
-                    return <div>Loading...</div>
-                }
-                if(error){
-                    return <div>Uy! Hay un error: {error.message}</div>
-                }
-                return (
-                    <>
-                    <div>{JSON.stringify(data)}</div>
-                    </>
-                )
-                }
+    if(loading){
+      return <div>Loading...</div>
+    }
+      if(error){
+        return <div>Uy! Hay un error: {error.message}</div>
+      }
+      return (
+        <>
+          <div>{JSON.stringify(data)}</div>
+        </>
+      )
+    }
 
-                export default App;`}
+  export default App;`}
         </code>
       </pre>
       <p>
