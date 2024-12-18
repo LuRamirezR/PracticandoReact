@@ -6,6 +6,7 @@ import CreacionProyecto from "./components/Resumen/CreacionProyecto/CreacionProy
 import { UseState } from "./components";
 import {UseEffect} from "./components";
 import {CustomHook} from "./components";
+import CustomForm from "./components/CustomForm/CustomForm";
 
 function App() {
   // const [summary, setSummary] = useState(false);
@@ -46,6 +47,7 @@ function App() {
       </div>
       {customHook ? <CustomHook /> : null}
       
+      <CustomForm/>
     </>
   );
 }

@@ -42,7 +42,7 @@ export const UseState = () => {
       <p>Ejemplo:</p>
       <pre>
         <code>
-                    {`import { useEffect, useState } from 'react'
+        {`import { useEffect, useState } from 'react'
           import './App.css'
           import { Button } from './components'
 

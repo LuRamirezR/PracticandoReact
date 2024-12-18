@@ -25,48 +25,48 @@ export const UseEffect = () => {
       <pre>
         <code>
           {`function App() {
-                const [data, setData] = useState([])
-                const [loading, setLoading] = useState(false)
-                const [error, setError] = useState("")
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
-                const fetchData = async () => {
-                  setLoading(true)
-                    try {
-                      const response = await fetch("https://api.example.com/data")
+  const fetchData = async () => {
+    setLoading(true)
+    try {
+      const response = await fetch("https://api.example.com/data")
                 
-                      if(!response.ok){
-                        throw new Error('Error al obtener los datos')
-                      }
+      if(!response.ok){
+        throw new Error('Error al obtener los datos')
+      }
                 
-                      const jsonData = await response.json()
-                      setData(jsonData)
-                    } catch (err) {
-                      setError(err as string)
-                      console.error(err)
-                    } finally {
-                      setLoading(false)
-                    }
-                  }
+      const jsonData = await response.json()
+      setData(jsonData)
+    } catch (err) {
+        setError(err as string)
+        console.error(err)
+    } finally {
+        setLoading(false)
+    }
+  }
 
-                useEffect(() => {
-                  fetchData()
-                }, [])
+  useEffect(() => {
+    fetchData()
+  }, [])
 
 
-                if(loading){
-                  return <div>Loading...</div>
-                }
-                if(error){
-                  return <div>Uy! Hay un error: {error}</div>
-                }
-                return (
-                  <>
-                  <div>{JSON.stringify(data)}</div>
-                  </>
-                )
-              }
+  if(loading){
+    return <div>Loading...</div>
+  }
+    if(error){
+      return <div>Uy! Hay un error: {error}</div>
+    }
+    return (
+      <>
+        <div>{JSON.stringify(data)}</div>
+      </>
+    )
+  }
 
-              export default App`}
+  export default App`}
         </code>
       </pre>
     </div>
