@@ -1,12 +1,10 @@
 import "./App.css";
 import { useState } from "react";
-// import { Resumen } from "./components";
-// import { PracticaCustomHook } from "./components";
 import CreacionProyecto from "./components/Resumen/CreacionProyecto/CreacionProyecto";
 import { UseState } from "./components";
 import {UseEffect} from "./components";
 import {CustomHook} from "./components";
-import CustomForm from "./components/CustomForm/CustomForm";
+import {FormZod} from "./components";
 
 function App() {
   // const [summary, setSummary] = useState(false);
@@ -14,6 +12,7 @@ function App() {
   const [hookUseState, setHookUseState] = useState(false);
   const [hookUseEffect, setHookUseEffect] = useState(false);
   const [customHook, setCustomHook] = useState(false);
+  const [customFormZod, setCustomFormZod] = useState(false);
 
   return (
     <>
@@ -47,7 +46,10 @@ function App() {
       </div>
       {customHook ? <CustomHook /> : null}
       
-      <CustomForm/>
+      <div>
+        <button onClick={() => setCustomFormZod(!customFormZod)}>Custom Form with zod verification</button>
+      </div>
+      {customFormZod ? <FormZod/> : null}
     </>
   );
 }
