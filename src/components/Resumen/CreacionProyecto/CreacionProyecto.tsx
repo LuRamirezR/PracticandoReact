@@ -41,6 +41,12 @@ const CreacionProyecto = () => {
           <code>bun create vite@latest projectreact</code>
         </pre>
       </p>
+      <p>
+        Se selecciona React y con TypeScript. Dentro de la carpeta del proyecto se instala las dependencias con el comando:
+        <pre>
+          <code>bun install</code>
+        </pre>
+      </p>
     </div>
   );
 };

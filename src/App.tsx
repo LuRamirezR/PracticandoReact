@@ -1,14 +1,14 @@
 import "./App.css";
 import { useState } from "react";
-import { Resumen } from "./components";
-import { PracticaCustomHook } from "./components";
+// import { Resumen } from "./components";
+// import { PracticaCustomHook } from "./components";
 import CreacionProyecto from "./components/Resumen/CreacionProyecto/CreacionProyecto";
 import { UseState } from "./components";
 import {UseEffect} from "./components";
 import {CustomHook} from "./components";
 
 function App() {
-  const [summary, setSummary] = useState(false);
+  // const [summary, setSummary] = useState(false);
   const [projectreact, setProjectreact] = useState(false);
   const [hookUseState, setHookUseState] = useState(false);
   const [hookUseEffect, setHookUseEffect] = useState(false);
@@ -16,9 +16,9 @@ function App() {
 
   return (
     <>
-      <button onClick={() => setSummary(!summary)}>Cambiar</button>
+      {/* <button onClick={() => setSummary(!summary)}>Cambiar</button>
       {!summary && <PracticaCustomHook />}
-      {summary && <Resumen />}
+      {summary && <Resumen />} */}
       {/* { summary ? <Resumen /> : <Practica /> } */}
       <div>
         <button onClick={() => setProjectreact(!projectreact)}>
