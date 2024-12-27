@@ -1,14 +1,46 @@
+import { ReactNode } from "react"
 import "./Button.css"
+import { useGlobalContext } from "../../context/global.context"
 
 interface Props {
-    label: string,
-    parentMethod: () => void
+  children: ReactNode,
+  parentMethod: () => void
 }
 
-export const Button = ({label, parentMethod}: Props) => {
-    return (
-        <button className="custom-button" onClick={parentMethod}>
-            {label}
-        </button>
-    )
+interface ChildrenProps {
+  children: ReactNode
 }
+
+export const ColorRed = ({ children }: ChildrenProps) => {
+  const { value } = useGlobalContext()
+
+  return (<div className="color-red">{value}: {children}</div>)
+}
+
+export const Button = ({ children, parentMethod }: Props) => {
+  const { setValue } = useGlobalContext()
+
+  const handleClick = () => {
+    setValue(10)
+    parentMethod()
+  }
+
+  return (
+    <button className="custom-button" onClick={handleClick}>
+      {children}
+    </button>
+  )
+}
+
+// interface Props {
+//     label: string,
+//     parentMethod: () => void
+// }
+
+// export const Button = ({label, parentMethod}: Props) => {
+//     return (
+//         <button className="custom-button" onClick={parentMethod}>
+//             {label}
+//         </button>
+//     )
+// }

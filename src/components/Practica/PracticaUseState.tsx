@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../Button/Button";
+//import { Button } from "../Button/Button";
 
 export const PracticaUseState = () => {
   const [count, setCount] = useState(0);
@@ -15,10 +15,12 @@ export const PracticaUseState = () => {
 
   return (
     <>
-    <h3>Practica UseState</h3>    
-    <Button label={`Count is ${count}`} parentMethod={countMore} />
+    <h3>Practica UseState</h3> 
+    <button onClick={countMore}>Count is {count}</button>   
+    {/* <Button label={`Count is ${count}`} parentMethod={countMore} /> */}
     <p>{name}</p>
-    <Button label="Change name" parentMethod={changeName} />
+    <button onClick={changeName}>Change name</button>
+    {/* <Button label="Change name" parentMethod={changeName} /> */}
     </>
   )
 };

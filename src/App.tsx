@@ -5,6 +5,7 @@ import { UseState } from "./components";
 import {UseEffect} from "./components";
 import {CustomHook} from "./components";
 import {FormZod} from "./components";
+import ContextReact from "./components/Resumen/ContextReact/ContextReact";
 
 function App() {
   // const [summary, setSummary] = useState(false);
@@ -13,6 +14,7 @@ function App() {
   const [hookUseEffect, setHookUseEffect] = useState(false);
   const [customHook, setCustomHook] = useState(false);
   const [customFormZod, setCustomFormZod] = useState(false);
+  const [contextReact, setContextReact] = useState(false);
 
   return (
     <>
@@ -50,6 +52,11 @@ function App() {
         <button onClick={() => setCustomFormZod(!customFormZod)}>Custom Form with zod verification</button>
       </div>
       {customFormZod ? <FormZod/> : null}
+
+      <div>
+        <button onClick={() => setContextReact(!contextReact)}>Context de React</button>
+      </div>
+      {contextReact ? <ContextReact /> : null}
     </>
   );
 }
