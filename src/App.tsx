@@ -2,11 +2,11 @@ import "./App.css";
 import { useState } from "react";
 import CreacionProyecto from "./components/Resumen/CreacionProyecto/CreacionProyecto";
 import { UseState } from "./components";
-import {UseEffect} from "./components";
-import {CustomHook} from "./components";
-import {FormZod} from "./components";
+import { UseEffect } from "./components";
+import { CustomHook } from "./components";
+import { FormZod } from "./components";
 import ContextReact from "./components/Resumen/ContextReact/ContextReact";
-import { UseRef } from "./components/UseRef/UseRef";
+import { UseRef } from "./components/Resumen/UseRef/UseRef";
 
 function App() {
   // const [summary, setSummary] = useState(false);
@@ -46,17 +46,23 @@ function App() {
       </div>
 
       <div>
-        <button onClick={() => setCustomHook(!customHook)}>Custom hook: useFetch</button>
+        <button onClick={() => setCustomHook(!customHook)}>
+          Custom hook: useFetch
+        </button>
       </div>
       {customHook ? <CustomHook /> : null}
-      
-      <div>
-        <button onClick={() => setCustomFormZod(!customFormZod)}>Custom Form with zod verification</button>
-      </div>
-      {customFormZod ? <FormZod/> : null}
 
       <div>
-        <button onClick={() => setContextReact(!contextReact)}>Context de React</button>
+        <button onClick={() => setCustomFormZod(!customFormZod)}>
+          Custom Form with zod verification
+        </button>
+      </div>
+      {customFormZod ? <FormZod /> : null}
+
+      <div>
+        <button onClick={() => setContextReact(!contextReact)}>
+          Context de React
+        </button>
       </div>
       {contextReact ? <ContextReact /> : null}
 

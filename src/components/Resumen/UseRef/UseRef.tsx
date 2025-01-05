@@ -1,23 +1,23 @@
-import { BookReader } from '../Practica/PracticaUseRefBookReader'
-import { FocusInput } from '../Practica/PracticaUseRefFocusInput'
+import { BookReader } from "../../Practica/PracticaUseRefBookReader";
+import { FocusInput } from "../../Practica/PracticaUseRefFocusInput";
 
 export const UseRef = () => {
   return (
     <div>
-        <h2>Hook UseRef</h2>
-        <p>
-            El objetivo 1 de useRef es crear una referencia mutable que persiste durante todo el ciclo de vida del componente, SIN causar un re render
-        </p>
-        <p>
-            El objetivo 2 de useRef es hacer referencia a un elemento del DOM
-        </p>
-        <p>
-            Ejemplo: Un marcador de un libro que utilizamos para guardar la ultima posicion de la lectura, NO modifica el contenido del libro
-        </p>
-        <p>El código de este ejemplo es:</p>
-        <pre>
-          <code>
-            {`
+      <h2>Hook UseRef</h2>
+      <p>
+        El objetivo 1 de useRef es crear una referencia mutable que persiste
+        durante todo el ciclo de vida del componente, SIN causar un re render
+      </p>
+      <p>El objetivo 2 de useRef es hacer referencia a un elemento del DOM</p>
+      <p>
+        Ejemplo: Un marcador de un libro que utilizamos para guardar la ultima
+        posicion de la lectura, NO modifica el contenido del libro
+      </p>
+      <p>El código de este ejemplo es:</p>
+      <pre>
+        <code>
+          {`
 import { useRef } from "react";
 
 export const BookReader = () => {
@@ -59,18 +59,19 @@ export const BookReader = () => {
 
 export default BookReader;
             `}
-          </code>
-        </pre>
-        <p>El resultado: (En este caso los mensajes están en consola)</p>
-        <BookReader />
-        
-        <h3>Aplicando otro ejemplo</h3>
-        <p>
-          Tambien se puede aplicar con un elemento del DOM, usando el método focus. Y el código es:
-        </p>
-        <pre>
-          <code>
-            {`
+        </code>
+      </pre>
+      <p>El resultado: (En este caso los mensajes están en consola)</p>
+      <BookReader />
+
+      <h3>Aplicando otro ejemplo</h3>
+      <p>
+        Tambien se puede aplicar con un elemento del DOM, usando el método
+        focus. Y el código es:
+      </p>
+      <pre>
+        <code>
+          {`
 import { useRef } from "react"
 
 export const FocusInput = () => {
@@ -92,10 +93,9 @@ export const FocusInput = () => {
     )
 }          
             `}
-          </code>
-        </pre>
-        <FocusInput />
+        </code>
+      </pre>
+      <FocusInput />
     </div>
-  )
-}
-
+  );
+};
