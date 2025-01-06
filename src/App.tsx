@@ -8,6 +8,7 @@ import { FormZod } from "./components";
 import ContextReact from "./components/Resumen/ContextReact/ContextReact";
 import { UseRef } from "./components/Resumen/UseRef/UseRef";
 import UseMemo from "./components/Resumen/UseMemo/UseMemo";
+import UseCallBack from "./components/Resumen/UseCallBack/UseCallBack";
 
 function App() {
   // const [summary, setSummary] = useState(false);
@@ -19,6 +20,7 @@ function App() {
   const [contextReact, setContextReact] = useState(false);
   const [hookUseRef, setHookUseRef] = useState(false);
   const [hookUseMemo, setHookUseMemo] = useState(false);
+  const [hookUseCallBack, setHookUseCallBack] = useState(false);
 
   return (
     <>
@@ -76,6 +78,11 @@ function App() {
       <div>
         <button onClick={() => setHookUseMemo(!hookUseMemo)}>Hook useMemo</button>
         { hookUseMemo ? <UseMemo /> : null }
+      </div>
+
+      <div>
+        <button onClick={() => setHookUseCallBack(!hookUseCallBack)}>Hook UseCallBack</button>
+        { hookUseCallBack ? <UseCallBack /> : null }
       </div>
     </>
   );
