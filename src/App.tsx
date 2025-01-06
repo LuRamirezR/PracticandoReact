@@ -7,6 +7,7 @@ import { CustomHook } from "./components";
 import { FormZod } from "./components";
 import ContextReact from "./components/Resumen/ContextReact/ContextReact";
 import { UseRef } from "./components/Resumen/UseRef/UseRef";
+import UseMemo from "./components/Resumen/UseMemo/UseMemo";
 
 function App() {
   // const [summary, setSummary] = useState(false);
@@ -17,6 +18,7 @@ function App() {
   const [customFormZod, setCustomFormZod] = useState(false);
   const [contextReact, setContextReact] = useState(false);
   const [hookUseRef, setHookUseRef] = useState(false);
+  const [hookUseMemo, setHookUseMemo] = useState(false);
 
   return (
     <>
@@ -70,6 +72,11 @@ function App() {
         <button onClick={() => setHookUseRef(!hookUseRef)}>Hook useRef</button>
       </div>
       {hookUseRef ? <UseRef /> : null}
+
+      <div>
+        <button onClick={() => setHookUseMemo(!hookUseMemo)}>Hook useMemo</button>
+        { hookUseMemo ? <UseMemo /> : null }
+      </div>
     </>
   );
 }
