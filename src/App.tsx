@@ -9,6 +9,7 @@ import ContextReact from "./components/Resumen/ContextReact/ContextReact";
 import { UseRef } from "./components/Resumen/UseRef/UseRef";
 import UseMemo from "./components/Resumen/UseMemo/UseMemo";
 import UseCallBack from "./components/Resumen/UseCallBack/UseCallBack";
+import ModalResumen from "./components/Resumen/Modal/ModalResumen";
 
 function App() {
   // const [summary, setSummary] = useState(false);
@@ -21,6 +22,7 @@ function App() {
   const [hookUseRef, setHookUseRef] = useState(false);
   const [hookUseMemo, setHookUseMemo] = useState(false);
   const [hookUseCallBack, setHookUseCallBack] = useState(false);
+  const [modal, setModal] = useState(false);
 
   return (
     <>
@@ -83,6 +85,11 @@ function App() {
       <div>
         <button onClick={() => setHookUseCallBack(!hookUseCallBack)}>Hook UseCallBack</button>
         { hookUseCallBack ? <UseCallBack /> : null }
+      </div>
+
+      <div>
+        <button onClick={() => setModal(!modal)}>Modal en React</button>
+        { modal ? <ModalResumen /> : null }
       </div>
     </>
   );
